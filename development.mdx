@@ -1,6 +1,6 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Development"
+description: "Preview, validate, and ship documentation changes in the Mintlify repo."
 ---
 
 <Info>
@@ -9,7 +9,7 @@ description: 'Preview changes locally to update your docs'
   - A docs repository with a `docs.json` file
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+Use this page when you are editing the docs repo itself.
 
 <Steps>
 <Step title="Install the Mintlify CLI">
@@ -20,75 +20,47 @@ npm i -g mint
 </Step>
 
 <Step title="Preview locally">
-
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
+Navigate to the docs repo and run:
 
 ```bash
 mint dev
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+A local preview opens on `http://localhost:3000` by default.
 
 </Step>
 </Steps>
 
 ## Custom ports
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+If port `3000` is already in use by the main app, run Mintlify on a different port:
 
 ```bash
 mint dev --port 3333
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
-
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
-
-```bash
-npm mint update
-```
-
 ## Validating links
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+Run a broken-link pass before you commit:
 
 ```bash
 mint broken-links
 ```
 
-## Deployment
+## Recommended workflow
 
-If the deployment is successful, you should see the following:
+1. Run `mint dev --port 3333` if the app is already on `3000`
+2. Check the main docs routes you changed
+3. Run `mint broken-links`
+4. Commit and push to the docs repo default branch or your review branch
 
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
+## Shipping to app.outfox.ai/docs
 
-## Code formatting
+The docs content lives in the Mintlify repo, but the public path target is:
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+```text
+https://app.outfox.ai/docs
+```
 
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
-  </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+For the subpath setup, use the Vercel rewrite flow documented in
+[/platform/deployment-vercel](/platform/deployment-vercel).

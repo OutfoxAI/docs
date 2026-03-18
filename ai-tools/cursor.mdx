@@ -1,39 +1,48 @@
 ---
 title: "Cursor setup"
-description: "Configure Cursor for your documentation workflow"
+description: "Connect Cursor to Outfox MCP and preview the docs repo efficiently."
 icon: "arrow-pointer"
 ---
 
-Set up Cursor to help you write and maintain your Mintlify documentation.
+Set up Cursor for both Outfox MCP work and Mintlify docs editing.
 
 ## Prerequisites
 
 - Cursor editor installed
+- Access to an Outfox account with organization membership
 
 ## Setup
 
 <Steps>
-<Step title="Open your docs directory in Cursor">
-  Open the root of your documentation repository where `docs.json` is located.
+<Step title="Open the right repo">
+  Open the app repo when you are working on MCP routes or landing pages.
+
+  Open the docs repo when you are editing Mintlify pages.
 </Step>
 
-<Step title="Install the Mintlify skill">
-  In the integrated terminal, run:
+<Step title="Add the Outfox MCP server">
+  In Cursor MCP settings, add:
+
+  ```bash
+  https://app.outfox.ai/api/mcp
+  ```
+
+  Complete the Clerk OAuth flow when prompted.
+</Step>
+
+<Step title="Install the Mintlify docs skill">
+  In the docs repo terminal, run:
 
   ```bash
   npx skills add https://mintlify.com/docs
   ```
-
-  This gives Cursor Mintlify's component reference, writing standards,
-  and workflow guidance.
 </Step>
 
-<Step title="Customize project instructions">
-  Edit `AGENTS.md` in your project root to add project-specific terminology,
-  style preferences, and content boundaries.
-</Step>
+<Step title="Preview docs locally">
+  Run:
 
-<Step title="Start writing with Cursor">
-  Open a file and use Cursor's AI features to draft and edit documentation.
+  ```bash
+  mint dev --port 3333
+  ```
 </Step>
 </Steps>

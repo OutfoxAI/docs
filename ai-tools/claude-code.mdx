@@ -1,14 +1,16 @@
 ---
 title: "Claude Code setup"
-description: "Configure Claude Code for your documentation workflow"
+description: "Connect Claude Code to Outfox MCP and use the docs repo effectively."
 icon: "asterisk"
 ---
 
-Set up Claude Code to help you write and maintain your Mintlify documentation.
+Set up Claude Code to work with both the Outfox MCP server and this Mintlify
+docs repo.
 
 ## Prerequisites
 
 - Active Claude subscription (Pro, Max, or API access)
+- Access to an Outfox account with organization membership
 
 ## Setup
 
@@ -19,25 +21,31 @@ Set up Claude Code to help you write and maintain your Mintlify documentation.
   ```
 </Step>
 
-<Step title="Install the Mintlify skill">
-  In your docs directory, run:
+<Step title="Connect the Outfox MCP server">
+  Add the remote MCP server URL used by Outfox:
+
+  ```bash
+  https://app.outfox.ai/api/mcp
+  ```
+
+  Claude Code will handle the OAuth flow and prompt you to sign in with Clerk.
+</Step>
+
+<Step title="Install the Mintlify docs skill">
+  In the docs repo, run:
 
   ```bash
   npx skills add https://mintlify.com/docs
   ```
 
-  This gives Claude Code Mintlify's component reference, writing standards,
-  and workflow guidance.
+  This improves page authoring and MDX component usage while you edit docs.
 </Step>
 
-<Step title="Customize project instructions">
-  Edit `AGENTS.md` in your project root to add project-specific terminology,
-  style preferences, and content boundaries.
-</Step>
+<Step title="Use Claude Code for both product and docs work">
+  Try prompts like:
 
-<Step title="Start writing with Claude Code">
   ```bash
-  claude
+  Search inspiration for strong skincare ads and draft a docs example from the result.
   ```
 </Step>
 </Steps>

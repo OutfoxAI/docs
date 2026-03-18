@@ -1,0 +1,75 @@
+---
+title: "Meta analytics tools"
+description: "Use the Meta analytics tool family to inspect campaign, ad set, ad, and creative performance inside the same MCP workflow."
+---
+
+## What this tool family is for
+
+The Meta analytics lane is built for questions like:
+
+- Which campaigns are working right now?
+- Which creatives are doing the heavy lifting?
+- Which ad sets deserve more attention?
+- What patterns keep showing up in the winners?
+
+## Primary analytics tools
+
+These are the core tools in the planned Meta analytics family:
+
+<CardGroup cols={2}>
+  <Card title="list_campaigns" icon="table-list">
+    List campaigns with status, objective, and budget context.
+  </Card>
+  <Card title="get_campaign_insights" icon="chart-column">
+    Pull performance metrics for a campaign over a date range.
+  </Card>
+  <Card title="get_adset_insights" icon="chart-line">
+    Inspect ad set performance with optional breakdowns.
+  </Card>
+  <Card title="get_ad_insights" icon="activity">
+    Check performance for a single ad.
+  </Card>
+  <Card title="get_creative_performance" icon="images">
+    Rank creatives by performance and use them as the basis for review.
+  </Card>
+</CardGroup>
+
+## Typical questions to ask
+
+```text
+Show me the top-performing creatives in this ad account over the last 14 days.
+```
+
+```text
+Which campaigns have the strongest CTR but weak conversion efficiency?
+```
+
+```text
+Compare the best and worst ad sets in this campaign and tell me what the loser should steal from the winner.
+```
+
+## The real advantage
+
+The point is not generic dashboard replacement.
+
+The point is to combine analytics with Outfox context:
+
+- brand voice
+- inspiration patterns
+- briefs
+- creative history
+
+That is where the conversation becomes strategy instead of reporting.
+
+## Best combined workflow
+
+1. Pull top-performing creatives from Meta analytics
+2. Search inspiration for similar patterns
+3. Generate a new brief for the next test
+4. Ask the model to explain the analytics reason behind that recommendation
+
+<Note>
+  Use this page as the conceptual reference for the Meta analytics lane of the
+  suite. For the current combined MCP server status and auth flow, start with
+  [Quickstart](/quickstart) and [Authentication](/platform/authentication).
+</Note>

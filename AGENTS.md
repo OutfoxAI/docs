@@ -1,7 +1,3 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
 # Documentation project instructions
 
 ## About this project
@@ -11,23 +7,28 @@
 - Configuration lives in `docs.json`
 - Run `mint dev` to preview locally
 - Run `mint broken-links` to check links
+- The primary docs audience is marketers, operators, and technical users connecting to the Outfox MCP suite
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Use **organization** for the top-level Clerk and Outfox workspace
+- Use **brand** for an Outfox brand profile inside an organization
+- Use **inspiration library** for the ad corpus users search
+- Use **Meta analytics** for campaign, ad set, ad, and creative performance data
+- Use **MCP client** for Claude, Cursor, or any other tool connecting to `https://app.outfox.ai/api/mcp`
 
 ## Style preferences
-
-{/* Add any project-specific style rules below */}
 
 - Use active voice and second person ("you")
 - Keep sentences concise — one idea per sentence
 - Use sentence case for headings
 - Bold for UI elements: Click **Settings**
 - Code formatting for file names, commands, paths, and code references
+- Lead with the user outcome before the implementation detail
+- Be explicit about whether a page describes a live workflow or a broader suite
+- Prefer concrete prompts over abstract tool descriptions
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Document public MCP usage, OAuth setup, workflows, prompts, and docs deployment
+- Do not document internal admin-only systems unless they affect end-user setup

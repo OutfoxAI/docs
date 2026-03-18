@@ -1,33 +1,45 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Tool reference"
+description: "Browse the Outfox MCP tool families, what they are for, and how to think about their inputs and outputs."
 ---
-
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
-
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+Outfox MCP uses OAuth-backed Bearer authentication through Clerk.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+For the full auth flow, go to [Authentication](/platform/authentication).
+
+## Tool families
+
+<CardGroup cols={3}>
+  <Card
+    title="Brand and analysis"
+    icon="building"
+    href="/api-reference/brand-and-analysis"
+  >
+    Organization, brand, product, and brand-analysis tools.
+  </Card>
+  <Card
+    title="Inspiration"
+    icon="wand-magic-sparkles"
+    href="/api-reference/inspiration"
+  >
+    Search and brief-generation tools for the inspiration library.
+  </Card>
+  <Card
+    title="Meta analytics"
+    icon="chart-line"
+    href="/api-reference/meta-analytics"
+  >
+    Campaign, ad set, ad, and creative-performance analytics tools.
+  </Card>
+</CardGroup>
+
+## How to read the reference
+
+For each family, focus on:
+
+- what question the tool answers
+- what identifiers it expects
+- what shape of answer it returns
+- what the best next tool call usually is

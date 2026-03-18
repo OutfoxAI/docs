@@ -1,0 +1,77 @@
+---
+title: "Authentication"
+description: "Understand how Clerk OAuth protects the Outfox MCP server and how clients discover the required metadata."
+---
+
+## Auth model
+
+Outfox MCP uses Clerk OAuth for remote MCP authentication.
+
+That means:
+
+- your MCP client connects to the Outfox MCP endpoint
+- Clerk handles the sign-in and token exchange
+- Outfox authorizes tool calls against the organizations your account can access
+
+## Endpoint
+
+```text
+https://app.outfox.ai/api/mcp
+```
+
+## Metadata endpoints
+
+Remote MCP clients need the standard metadata endpoints during setup.
+
+<CardGroup cols={2}>
+  <Card
+    title="Authorization server metadata"
+    icon="key"
+    href="https://app.outfox.ai/.well-known/oauth-authorization-server"
+  >
+    OAuth discovery endpoint exposed through Clerk metadata handlers.
+  </Card>
+  <Card
+    title="Protected resource metadata"
+    icon="shield-check"
+    href="https://app.outfox.ai/.well-known/oauth-protected-resource/mcp"
+  >
+    Protected resource metadata used by MCP clients during auth negotiation.
+  </Card>
+</CardGroup>
+
+## What happens after sign-in
+
+Once the client has a token:
+
+1. Outfox resolves the authenticated user
+2. Outfox looks up the organizations the user belongs to
+3. Tool calls are scoped to brands, jobs, and resources the user can access
+
+<Tip>
+  If your account has access to multiple organizations, start by asking the
+  model to list them so you can pick the right one.
+</Tip>
+
+## Common first prompt
+
+```text
+List my organizations, then list the brands I can access in each one.
+```
+
+## Failure modes to expect
+
+<AccordionGroup>
+  <Accordion title="Unauthorized or invalid token">
+    The client either has no token or has not completed the Clerk OAuth flow
+    yet. Reconnect the MCP server and complete sign-in again.
+  </Accordion>
+  <Accordion title="Organization not found or access denied">
+    The authenticated user does not have access to the requested organization or
+    brand. Ask the model to list the organizations it can see first.
+  </Accordion>
+  <Accordion title="Protected resource metadata mismatch">
+    Verify the client is using the correct endpoint and can reach the
+    `/.well-known/oauth-protected-resource/mcp` route.
+  </Accordion>
+</AccordionGroup>

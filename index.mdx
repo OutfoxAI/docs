@@ -1,97 +1,78 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Outfox MCP"
+description: "Connect Outfox AI to your favorite MCP-capable clients for inspiration research, brief generation, brand analysis, and Meta analytics workflows."
 ---
 
-## Setting up
+## What Outfox MCP does
 
-Get your documentation site up and running in minutes.
+Outfox MCP turns Outfox into a chat-native marketing workspace.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+You can use it to:
 
-## Make it yours
+- Search the inspiration library for winning ads
+- Generate structured briefs from inspiration posts
+- Inspect brands, products, and analysis jobs
+- Add Meta analytics workflows to the same strategy loop
 
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Connect Outfox MCP in minutes and run your first workflow.
+  </Card>
+  <Card title="Platform overview" icon="sparkles" href="/platform/overview">
+    See how inspiration and analytics fit into one MCP suite.
   </Card>
   <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
+    title="Inspiration tools"
+    icon="wand-magic-sparkles"
+    href="/platform/inspiration-tools"
   >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+    Search ads, generate briefs, and move from idea to direction.
   </Card>
   <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
+    title="Meta analytics tools"
+    icon="chart-line"
+    href="/platform/meta-analytics-tools"
   >
-    Auto-generate API documentation from OpenAPI specifications.
+    Explore campaigns, ad sets, ads, and creative performance workflows.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Start with the loop
 
-Everything you need to create world-class documentation.
+The best experience is not a single tool call.
 
-<Columns cols={2}>
+It is the loop:
+
+<Steps>
+  <Step title="Search inspiration">
+    Find examples worth discussing with `search_inspiration`.
+  </Step>
+  <Step title="Generate a brief">
+    Convert a promising post into a structured direction with `generate_brief`.
+  </Step>
+  <Step title="Bring in performance context">
+    Layer Meta analytics into the same conversation to see what patterns are
+    actually winning.
+  </Step>
+</Steps>
+
+## Recommended paths
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="key" href="/platform/authentication">
+    Understand Clerk OAuth, protected resources, and MCP authorization.
+  </Card>
+  <Card title="Prompt recipes" icon="message" href="/platform/prompt-recipes">
+    Copy battle-tested prompts for research, strategy, and analytics.
+  </Card>
+  <Card title="Tool catalog" icon="boxes-stacked" href="/api-reference/introduction">
+    Browse the tool families and their intended inputs and outputs.
+  </Card>
   <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
+    title="Deploy docs to /docs"
+    icon="globe"
+    href="/platform/deployment-vercel"
   >
-    Use MDX to style your docs pages.
+    Follow the subpath deployment setup for `app.outfox.ai/docs`.
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+</CardGroup>

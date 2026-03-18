@@ -1,0 +1,73 @@
+---
+title: "Deploy to app.outfox.ai/docs"
+description: "Set up Mintlify and Vercel so the docs repo is published at the /docs subpath on the app domain."
+---
+
+## Goal
+
+Publish this docs repo at:
+
+```text
+https://app.outfox.ai/docs
+```
+
+## Recommended setup
+
+Use Mintlify for the docs site and Vercel rewrites for the `/docs` subpath on
+the app domain.
+
+## Step 1: Configure Mintlify
+
+In Mintlify:
+
+1. Create or open the docs project for this repo
+2. Enable hosting at the `/docs` subpath
+3. Confirm the docs render correctly on the Mintlify-hosted domain
+
+## Step 2: Add Vercel rewrites on the app domain
+
+On the app-side Vercel project, proxy `/docs` to the Mintlify-hosted docs
+deployment.
+
+Example `vercel.json` shape:
+
+```json
+{
+  "rewrites": [
+    {
+      "source": "/docs",
+      "destination": "https://YOUR_MINTLIFY_SUBDOMAIN.mintlify.dev/docs"
+    },
+    {
+      "source": "/docs/:match*",
+      "destination": "https://YOUR_MINTLIFY_SUBDOMAIN.mintlify.dev/docs/:match*"
+    }
+  ]
+}
+```
+
+Replace `YOUR_MINTLIFY_SUBDOMAIN` with the Mintlify deployment host shown in
+your dashboard.
+
+## Step 3: Verify the result
+
+Confirm all of these work:
+
+- `https://app.outfox.ai/docs`
+- `https://app.outfox.ai/docs/quickstart`
+- `https://app.outfox.ai/docs/platform/inspiration-tools`
+- `https://app.outfox.ai/docs/api-reference/introduction`
+
+## Local workflow
+
+To preview docs locally while the app already uses port `3000`:
+
+```bash
+mint dev --port 3333
+```
+
+## Useful references
+
+- Mintlify Vercel subpath hosting docs
+- Mintlify reverse proxy docs
+- Vercel rewrite docs

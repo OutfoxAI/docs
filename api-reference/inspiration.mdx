@@ -1,0 +1,65 @@
+---
+title: "Inspiration tools reference"
+description: "Reference for the inspiration MCP tool family."
+---
+
+## `search_inspiration`
+
+Use `search_inspiration` when you want to retrieve ad examples from the
+inspiration library.
+
+### Common inputs
+
+- `query`
+- `platform`
+- `category`
+- `type`
+- `liveOnly`
+- `limit`
+
+### Common output fields
+
+- `id`
+- `brandName`
+- `headline`
+- `description`
+- `categories`
+- `niches`
+- `platform`
+- `type`
+- `displayFormat`
+
+### Best next step
+
+Once you have a good post ID, move directly to `generate_brief`.
+
+## `generate_brief`
+
+Use `generate_brief` when you want to turn a strong inspiration post into a
+brand-tailored creative brief.
+
+### Inputs
+
+- `brandId`
+- `postId`
+
+### Common output fields
+
+- `concept`
+- `hook`
+- `keyMessage`
+- `cta`
+- `visualDirection`
+- `tone`
+- `format`
+- `aspectRatio`
+- `targetAudience`
+- `scriptOrCopy`
+- `whyItWorks`
+
+## Best workflow
+
+1. `search_inspiration`
+2. pick the strongest `postId`
+3. `generate_brief`
+4. ask the model to create variations of the brief

@@ -1,0 +1,63 @@
+---
+title: "Meta analytics tools reference"
+description: "Reference for the Meta analytics MCP tool family."
+---
+
+## Core analytics tools
+
+### `list_campaigns`
+
+Use it to enumerate campaigns for an ad account and understand the top-level
+working set before drilling down.
+
+### `get_campaign_insights`
+
+Use it to evaluate campaign performance over a date range.
+
+Typical metrics:
+
+- impressions
+- clicks
+- spend
+- CTR
+- CPC
+- CPM
+- ROAS
+
+### `get_adset_insights`
+
+Use it to inspect ad set performance and compare segments such as placement,
+device, or audience breakdowns.
+
+### `get_ad_insights`
+
+Use it for single-ad inspection when you already know which ad needs a closer
+look.
+
+### `get_creative_performance`
+
+Use it to rank creatives by performance and surface the winners you want to
+compare against inspiration patterns.
+
+## Common inputs
+
+Most analytics tools rely on:
+
+- `adAccountId`
+- `campaignId`, `adsetId`, or `adId`
+- `dateFrom`
+- `dateTo`
+- optional metric or breakdown lists
+
+## Best workflow
+
+1. `list_campaigns`
+2. `get_campaign_insights`
+3. `get_creative_performance`
+4. compare the winners to inspiration results
+5. generate the next brief
+
+<Note>
+  The Meta analytics lane is the performance side of the broader Outfox MCP
+  suite. Use it together with the inspiration tools for the strongest results.
+</Note>

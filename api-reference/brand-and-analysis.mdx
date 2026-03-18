@@ -1,0 +1,66 @@
+---
+title: "Brand and analysis tools"
+description: "Reference for the brand, organization, product, and brand-analysis MCP tools."
+---
+
+## Organization and brand discovery
+
+### `list_organizations`
+
+**Use it for:** finding which organizations the authenticated account can use.
+
+**Typical output:** organization IDs, Clerk organization IDs, and names.
+
+### `list_brands`
+
+**Use it for:** discovering which brands are accessible within one organization
+or across all accessible organizations.
+
+**Typical input:**
+
+- `orgId` (optional)
+
+### `get_brand`
+
+**Use it for:** inspecting a brand profile.
+
+**Typical output includes:**
+
+- colors
+- fonts
+- voice data
+- products
+- asset URLs
+
+### `get_brand_products`
+
+**Use it for:** pulling the products attached to a brand.
+
+## Analysis tools
+
+### `create_brand_analysis`
+
+**Use it for:** starting a fresh brand-analysis workflow from one or more URLs.
+
+**Typical input:**
+
+- `orgId` (optional if the user has only one accessible organization)
+- `urls`
+
+**Typical output:** one result per URL with a `brandId` and `jobId`.
+
+### `get_analysis_status`
+
+**Use it for:** checking whether the job is still running or has completed.
+
+**Typical input:**
+
+- `jobId`
+
+## Best workflow
+
+1. `list_organizations`
+2. `list_brands`
+3. `create_brand_analysis`
+4. `get_analysis_status`
+5. `get_brand`

@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Outfox AI Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#F59E0B",
+    "light": "#FBBF24",
+    "dark": "#E8723A"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -15,35 +15,28 @@
         "groups": [
           {
             "group": "Getting started",
+            "pages": ["index", "quickstart", "development"]
+          },
+          {
+            "group": "MCP platform",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "platform/overview",
+              "platform/authentication",
+              "platform/example-workflows"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Tool families",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "platform/inspiration-tools",
+              "platform/meta-analytics-tools",
+              "platform/prompt-recipes",
+              "platform/deployment-vercel"
             ]
           },
           {
             "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
+            "pages": ["ai-tools/cursor", "ai-tools/claude-code"]
           }
         ]
       },
@@ -51,18 +44,15 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "group": "Reference overview",
+            "pages": ["api-reference/introduction"]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Tool catalogs",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/brand-and-analysis",
+              "api-reference/inspiration",
+              "api-reference/meta-analytics"
             ]
           }
         ]
@@ -71,14 +61,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Open app",
+          "href": "https://app.outfox.ai",
+          "icon": "rocket"
+        },
+        {
+          "anchor": "MCP guide",
+          "href": "https://app.outfox.ai/mcp-guide",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "MCP endpoint",
+          "href": "https://app.outfox.ai/api/mcp",
+          "icon": "plug"
         }
       ]
     }
@@ -90,33 +85,31 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "GitHub",
+        "href": "https://github.com/outfoxai/app"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Outfox",
+      "href": "https://app.outfox.ai"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/outfoxai"
     }
   }
 }
